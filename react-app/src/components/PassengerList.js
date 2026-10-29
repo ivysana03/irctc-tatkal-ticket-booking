@@ -131,7 +131,8 @@ const PassengerList = () => {
     };
   
     // Validate age
-    const isAgeValid = newRow.age >= 1 && newRow.age <= 125 && !isNaN(newRow.age);
+    const isAgeValid = newRow.age >= 1 && newRow.age <= 125 && newRow.age !== '' && !isNaN(newRow.age);
+    
     if (!isAgeValid) {
       return { ...newRow, error: true }; // Keeps the error indicator
     }
